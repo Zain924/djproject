@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href="/static/stylee.css">
+
+{% block body %}
+
+{% for project in projects %}
+<div class="portfolios">
+    <h2>{{project.title}}</h2>
+    {% if project.image %}
+    <div class="image-container">
+        <img src="{{project.image.url}}" alt="Responsive Image">
+    </div>
+    {% endif %}
+    <div class="sub-heading">
+        <h1>About Project: {{project.title}}</h1>
+    </div>
+    <div class="description">
+        <p>{{project.desc}}</p>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock body %}
+
+
